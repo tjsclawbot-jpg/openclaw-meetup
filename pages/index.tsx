@@ -164,9 +164,11 @@ export default function Home() {
             </div>
           </section>
 
-          {/* RSVP Section */}
-          <section className="max-w-2xl mx-auto mb-16">
-            <div className="arcade-card">
+          {/* RSVP & Sponsorship Section */}
+          <section className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* RSVP Card */}
+              <div className="arcade-card">
               <h2 className="text-3xl font-arcade mb-8 border-b-4 border-arcade-yellow pb-4 text-center uppercase">
                 RSVP
               </h2>
@@ -225,28 +227,27 @@ export default function Home() {
                   </button>
                 </form>
               )}
-            </div>
-          </section>
+              </div>
 
-          {/* Sponsorship Section */}
-          <section className="max-w-2xl mx-auto mb-16">
-            <div className="arcade-card">
-              <h2 className="text-3xl font-arcade mb-4 border-b-4 border-arcade-yellow pb-4 text-center uppercase">
-                PARTNER WITH US
-              </h2>
-              <p className="font-mono text-base uppercase leading-relaxed mb-6">
-                We're building an ongoing series of OpenClaw meetups in DC. If you're interested in sponsoring or partnering with us, we'd love to hear from you.
-              </p>
-              <p className="font-mono text-base uppercase leading-relaxed text-center">
-                Reach out to{' '}
-                <a 
-                  href="mailto:tj@wrkhrs.co"
-                  className="text-arcade-yellow hover:underline font-bold"
-                >
-                  tj@wrkhrs.co
-                </a>
-                {' '}for sponsorship details
-              </p>
+              {/* Sponsorship Card */}
+              <div className="arcade-card">
+                <h2 className="text-3xl font-arcade mb-4 border-b-4 border-arcade-yellow pb-4 text-center uppercase">
+                  PARTNER WITH US
+                </h2>
+                <p className="font-mono text-base uppercase leading-relaxed mb-6">
+                  We're building an ongoing series of OpenClaw meetups in DC. If you're interested in sponsoring or partnering with us, we'd love to hear from you.
+                </p>
+                <p className="font-mono text-base uppercase leading-relaxed text-center">
+                  Reach out to{' '}
+                  <a 
+                    href="mailto:tj@wrkhrs.co"
+                    className="text-arcade-yellow hover:underline font-bold"
+                  >
+                    tj@wrkhrs.co
+                  </a>
+                  {' '}for sponsorship details
+                </p>
+              </div>
             </div>
           </section>
 
