@@ -65,7 +65,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <div className="min-h-screen bg-arcade-dark text-arcade-yellow scanlines">
+      <div 
+        className="min-h-screen bg-arcade-dark text-arcade-yellow scanlines"
+        style={{
+          backgroundImage: "url('/pattern-isometric.jpg')",
+          backgroundSize: '300px 300px',
+          backgroundRepeat: 'repeat',
+          backgroundAttachment: 'fixed'
+        }}
+      >
         {/* Arcade Header with Hero Background */}
         <header className="border-b-8 border-arcade-yellow relative overflow-hidden py-32">
           {/* Background Image */}
@@ -88,18 +96,9 @@ export default function Home() {
         </header>
 
         <main className="container mx-auto px-4 py-12">
-          {/* Event Info Section with Pattern Background */}
-          <section 
-            className="mb-16 relative"
-            style={{
-              backgroundImage: "url('/pattern-isometric.jpg')",
-              backgroundSize: '400px 400px',
-              backgroundRepeat: 'repeat',
-              backgroundAttachment: 'fixed'
-            }}
-          >
-            <div className="container mx-auto px-4 py-12 relative z-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {/* Event Info Section */}
+          <section className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* Event Info Card */}
               <div className="arcade-card">
                 <div className="mb-6">
@@ -148,7 +147,6 @@ export default function Home() {
                     Happy hour. Good people. Good tech talk. We're figuring this out together.
                   </p>
                 </div>
-              </div>
               </div>
             </div>
           </section>
