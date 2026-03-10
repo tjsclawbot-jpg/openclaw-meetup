@@ -5,7 +5,6 @@ import { supabase, RSVP } from '@/lib/supabase'
 export default function Admin() {
   const [rsvps, setRsvps] = useState<RSVP[]>([])
   const [loading, setLoading] = useState(true)
-  const [totalGuests, setTotalGuests] = useState(0)
 
   useEffect(() => {
     loadRsvps()
@@ -25,12 +24,6 @@ export default function Admin() {
       if (error) throw error
 
       setRsvps(data || [])
-
-      // Calculate total guests (each RSVP + 1 for guest if has_guest=true)
-      const total = (data || []).reduce((sum, rsvp) => {
-        return sum + 1 + (rsvp.has_guest ? 1 : 0)
-      }, 0)
-      setTotalGuests(total)
     } catch (err) {
       console.error('Error loading RSVPs:', err)
     } finally {
@@ -76,20 +69,10 @@ export default function Admin() {
 
         <main className="container mx-auto px-4 py-12">
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-12">
             <div className="arcade-card text-center uppercase">
               <p className="text-sm opacity-80 mb-2">TOTAL RSVPS</p>
               <p className="text-5xl font-bold">{rsvps.length}</p>
-            </div>
-            <div className="arcade-card text-center uppercase">
-              <p className="text-sm opacity-80 mb-2">TOTAL GUESTS</p>
-              <p className="text-5xl font-bold">{totalGuests}</p>
-            </div>
-            <div className="arcade-card text-center uppercase">
-              <p className="text-sm opacity-80 mb-2">+1 GUESTS</p>
-              <p className="text-5xl font-bold">
-                {rsvps.filter(r => r.has_guest).length}
-              </p>
             </div>
           </div>
 
@@ -129,7 +112,6 @@ export default function Admin() {
                   <tr className="border-b-2 border-arcade-yellow uppercase">
                     <th className="text-left py-2 px-2">NAME</th>
                     <th className="text-left py-2 px-2">EMAIL</th>
-                    <th className="text-center py-2 px-2">+1?</th>
                     <th className="text-left py-2 px-2">RSVP'D</th>
                   </tr>
                 </thead>
@@ -138,9 +120,6 @@ export default function Admin() {
                     <tr key={idx} className="border-b-2 border-arcade-black hover:bg-black/30 uppercase">
                       <td className="py-3 px-2 font-bold">{rsvp.name}</td>
                       <td className="py-3 px-2 opacity-80">{rsvp.email}</td>
-                      <td className="py-3 px-2 text-center font-bold">
-                        {rsvp.has_guest ? '✓ YES' : '-'}
-                      </td>
                       <td className="py-3 px-2 opacity-60 text-xs">
                         {new Date(rsvp.created_at || '').toLocaleDateString()}
                       </td>

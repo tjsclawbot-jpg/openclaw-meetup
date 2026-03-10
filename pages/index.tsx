@@ -6,7 +6,6 @@ export default function Home() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    has_guest: false,
   })
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
@@ -36,8 +35,6 @@ export default function Home() {
           {
             name: formData.name,
             email: formData.email,
-            has_guest: formData.has_guest,
-            dietary_restrictions: null,
           },
         ])
         .select()
@@ -48,7 +45,7 @@ export default function Home() {
       }
 
       setSubmitted(true)
-      setFormData({ name: '', email: '', has_guest: false })
+      setFormData({ name: '', email: '' })
     } catch (err: any) {
       const errorMsg = err?.message || 'Error submitting RSVP. Please try again.'
       setError(errorMsg)
@@ -190,19 +187,6 @@ export default function Home() {
                       required
                       className="arcade-input"
                     />
-                  </div>
-
-                  <div>
-                    <label className="flex items-center font-bold mb-4 uppercase">
-                      <input
-                        type="checkbox"
-                        name="has_guest"
-                        checked={formData.has_guest}
-                        onChange={handleChange}
-                        className="mr-3 w-5 h-5"
-                      />
-                      <span>BRINGING +1 GUEST?</span>
-                    </label>
                   </div>
 
                   {error && <p className="text-red-400 font-bold uppercase">{error}</p>}
