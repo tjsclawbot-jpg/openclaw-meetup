@@ -88,6 +88,30 @@ export default function Home() {
         </header>
 
         <main className="container mx-auto px-4 py-12">
+          {/* Pattern Section */}
+          <section 
+            className="mb-16 rounded-lg border-4 border-arcade-yellow overflow-hidden relative py-16"
+            style={{
+              backgroundImage: "url('/pattern-isometric.jpg')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          >
+            {/* Overlay for readability */}
+            <div className="absolute inset-0 bg-black/60"></div>
+            
+            {/* Content */}
+            <div className="container mx-auto px-4 relative z-10">
+              <h2 className="arcade-title text-3xl md:text-5xl text-center mb-4 drop-shadow-lg">
+                THE CREATIVE SPACE
+              </h2>
+              <p className="text-center font-mono text-sm md:text-base uppercase max-w-2xl mx-auto">
+                This is where builders, designers, and thinkers come together. 
+                Workhorse Collective is our home—a space for experimentation, collaboration, and pushing what's possible with AI.
+              </p>
+            </div>
+          </section>
+
           {/* Event Info Section */}
           <section className="mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
