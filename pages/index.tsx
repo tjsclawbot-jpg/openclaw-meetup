@@ -74,7 +74,7 @@ export default function Home() {
       >
         {/* Arcade Header with Pattern Background */}
         <header 
-          className="border-b-8 border-arcade-yellow relative overflow-hidden py-32"
+          className="relative overflow-hidden py-32"
           style={{
             backgroundImage: "url('/pattern-isometric.jpg')",
             backgroundSize: '600px 600px',
