@@ -244,7 +244,6 @@ export default function Home() {
               WORKHORSE COLLECTIVE
             </a>
           </p>
-          <p className="opacity-60 mb-6">OPENCLAW DEMO • MARCH 12, 2026</p>
 
           {/* Tech Stack */}
           <div className="border-t border-arcade-yellow pt-4 mt-6">
