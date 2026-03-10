@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #0a0a0a;
+  color: #FFD60A;
+  font-family: 'Courier New', monospace;
+}
+
+/* Arcade-style borders and effects */
+.arcade-button {
+  @apply px-6 py-3 bg-arcade-yellow text-arcade-black font-bold border-4 border-arcade-black shadow-arcade transform transition-all duration-75 hover:shadow-arcade-lg hover:scale-95 active:scale-90 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.arcade-button:hover {
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 214, 10, 0.6);
+}
+
+.arcade-card {
+  @apply bg-arcade-black border-4 border-arcade-yellow p-6 shadow-arcade;
+}
+
+.arcade-input {
+  @apply w-full px-3 py-2 bg-arcade-black border-2 border-arcade-yellow text-arcade-yellow placeholder-gray-600 font-mono focus:outline-none focus:ring-2 focus:ring-arcade-yellow;
+}
+
+.arcade-title {
+  @apply text-arcade-yellow font-arcade text-center drop-shadow-lg;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 214, 10, 0.5);
+}
+
+.pixel-border {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.scanlines {
+  position: relative;
+}
+
+.scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
