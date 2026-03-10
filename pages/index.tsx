@@ -69,7 +69,7 @@ export default function Home() {
         className="min-h-screen bg-arcade-dark text-arcade-yellow scanlines"
         style={{
           backgroundImage: "url('/pattern-isometric.jpg')",
-          backgroundSize: '300px 300px',
+          backgroundSize: '600px 600px',
           backgroundRepeat: 'repeat',
           backgroundAttachment: 'fixed'
         }}
