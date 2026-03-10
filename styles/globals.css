@@ -61,3 +61,42 @@ html, body {
   );
   pointer-events: none;
 }
+
+/* Halftone texture for background images */
+.halftone {
+  position: relative;
+}
+
+.halftone::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle, rgba(255, 214, 10, 0.1) 1px, transparent 1px);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+
+/* Yellow monochrome overlay with dark tint */
+.hero-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) brightness(0.6) sepia(0.8);
+  mix-blend-mode: multiply;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(135deg, rgba(255, 214, 10, 0.15) 0%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}

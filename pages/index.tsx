@@ -73,7 +73,36 @@ export default function Home() {
         </header>
 
         <main className="container mx-auto px-4 py-12">
-          {/* Hero Section */}
+          {/* Hero Background Images Section */}
+          <section className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              {/* Studio Sign Image */}
+              <div 
+                className="hero-bg halftone h-64 rounded-lg border-4 border-arcade-yellow"
+                style={{
+                  backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23333%22 width=%22400%22 height=%22300%22/%3E%3C/svg%3E')"
+                }}
+              >
+                <div className="absolute inset-0 flex items-center justify-center text-center">
+                  <p className="text-arcade-yellow font-arcade text-sm opacity-80">WORKHORSE COLLECTIVE</p>
+                </div>
+              </div>
+
+              {/* Studio Interior Image */}
+              <div 
+                className="hero-bg halftone h-64 rounded-lg border-4 border-arcade-yellow"
+                style={{
+                  backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a1a1a%22 width=%22400%22 height=%22300%22/%3E%3C/svg%3E')"
+                }}
+              >
+                <div className="absolute inset-0 flex items-center justify-center text-center">
+                  <p className="text-arcade-yellow font-arcade text-sm opacity-80">CREATIVE STUDIO</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Event Info Section */}
           <section className="mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* Event Info Card */}
