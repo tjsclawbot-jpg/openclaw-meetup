@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 import { supabase, RSVP } from '@/lib/supabase'
-import studioInterior from '@/public/studio-interior.jpg'
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -136,13 +134,11 @@ export default function Home() {
                     </div>
                   </div>
                   {/* Studio Image */}
-                  <div className="relative w-full h-64 mt-6 rounded border-2 border-arcade-yellow overflow-hidden">
-                    <Image
-                      src={studioInterior}
+                  <div className="w-full mt-6 rounded border-2 border-arcade-yellow overflow-hidden">
+                    <img
+                      src="/studio-interior.jpg"
                       alt="Workhorse Collective Studio - Open Garage Doors with Pool Table"
-                      fill
-                      className="object-cover"
-                      priority
+                      className="w-full h-64 object-cover"
                     />
                   </div>
                 </div>
