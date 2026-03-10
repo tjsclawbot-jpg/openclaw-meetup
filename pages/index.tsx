@@ -7,7 +7,6 @@ export default function Home() {
     name: '',
     email: '',
     has_guest: false,
-    dietary_restrictions: '',
   })
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
@@ -38,7 +37,7 @@ export default function Home() {
             name: formData.name,
             email: formData.email,
             has_guest: formData.has_guest,
-            dietary_restrictions: formData.dietary_restrictions || null,
+            dietary_restrictions: null,
           },
         ])
         .select()
@@ -49,7 +48,7 @@ export default function Home() {
       }
 
       setSubmitted(true)
-      setFormData({ name: '', email: '', has_guest: false, dietary_restrictions: '' })
+      setFormData({ name: '', email: '', has_guest: false })
     } catch (err: any) {
       const errorMsg = err?.message || 'Error submitting RSVP. Please try again.'
       setError(errorMsg)
@@ -62,7 +61,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>OpenClaw Meetup - Workhorse Collective</title>
+        <title>DC OpenClaw Meetup - Workhorse Collective</title>
         <meta name="description" content="OpenClaw Demo & Networking at Workhorse Collective" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -71,7 +70,7 @@ export default function Home() {
         {/* Arcade Header */}
         <header className="border-b-8 border-arcade-yellow py-8 bg-black">
           <div className="container mx-auto px-4">
-            <h1 className="arcade-title text-4xl md:text-6xl mb-2">OPENCLAW</h1>
+            <h1 className="arcade-title text-4xl md:text-6xl mb-2">DC OPENCLAW MEETUP</h1>
             <p className="arcade-title text-xl">DEMO & NETWORKING</p>
           </div>
         </header>
@@ -83,10 +82,10 @@ export default function Home() {
               {/* Event Info Card */}
               <div className="arcade-card">
                 <div className="mb-6">
-                  <h2 className="text-2xl font-arcade mb-4 border-b-4 border-arcade-yellow pb-2">
+                  <h2 className="text-2xl font-arcade mb-4 border-b-4 border-arcade-yellow pb-2 uppercase">
                     EVENT DETAILS
                   </h2>
-                  <div className="space-y-4 font-mono">
+                  <div className="space-y-4 font-mono uppercase">
                     <div>
                       <p className="text-sm opacity-80">DATE</p>
                       <p className="text-xl font-bold">THU MAR 12, 2026</p>
@@ -96,12 +95,17 @@ export default function Home() {
                       <p className="text-xl font-bold">5:30 PM - 7:30 PM</p>
                     </div>
                     <div>
-                      <p className="text-sm opacity-80">LOCATION</p>
-                      <p className="text-lg font-bold">
-                        Workhorse Collective<br />
-                        320 3rd St NE (Rear)<br />
-                        Washington, DC
-                      </p>
+                      <p className="text-sm opacity-80 uppercase">LOCATION</p>
+                      <a 
+                        href="https://www.google.com/maps/search/320+3rd+St+NE,+Washington+DC" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-lg font-bold text-arcade-yellow hover:underline"
+                      >
+                        WORKHORSE COLLECTIVE<br />
+                        320 3rd ST NE (REAR)<br />
+                        WASHINGTON, DC
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -110,29 +114,29 @@ export default function Home() {
               {/* What to Expect Card */}
               <div className="arcade-card">
                 <div>
-                  <h2 className="text-2xl font-arcade mb-4 border-b-4 border-arcade-yellow pb-2">
+                  <h2 className="text-2xl font-arcade mb-4 border-b-4 border-arcade-yellow pb-2 uppercase">
                     WHAT'S HAPPENING
                   </h2>
-                  <ul className="space-y-3 font-mono text-sm">
+                  <ul className="space-y-3 font-mono text-sm uppercase">
                     <li className="flex items-start">
                       <span className="mr-3">▶</span>
-                      <span>OpenClaw platform intro & demo</span>
+                      <span>OPENCLAW PLATFORM INTRO & DEMO</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-3">▶</span>
-                      <span>See agents, automation, AI workflows</span>
+                      <span>SEE AGENTS, AUTOMATION, AI WORKFLOWS</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-3">▶</span>
-                      <span>Network with builders & AI enthusiasts</span>
+                      <span>NETWORK WITH BUILDERS & AI ENTHUSIASTS</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-3">▶</span>
-                      <span>Learn from real-world implementations</span>
+                      <span>LEARN FROM REAL-WORLD IMPLEMENTATIONS</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-3">▶</span>
-                      <span>Refreshments & good vibes</span>
+                      <span>TECH TALK & GOOD VIBES</span>
                     </li>
                   </ul>
                 </div>
@@ -143,15 +147,15 @@ export default function Home() {
           {/* RSVP Section */}
           <section className="max-w-2xl mx-auto mb-16">
             <div className="arcade-card">
-              <h2 className="text-3xl font-arcade mb-8 border-b-4 border-arcade-yellow pb-4 text-center">
+              <h2 className="text-3xl font-arcade mb-8 border-b-4 border-arcade-yellow pb-4 text-center uppercase">
                 RSVP
               </h2>
 
               {submitted ? (
                 <div className="text-center py-8">
                   <p className="text-2xl font-bold mb-4">✓ CONFIRMED!</p>
-                  <p className="font-mono text-lg mb-4">
-                    Thanks for RSVPing. See you Thursday!
+                  <p className="font-mono text-lg mb-4 uppercase">
+                    THANKS FOR RSVPING. SEE YOU THURSDAY!
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -163,33 +167,33 @@ export default function Home() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-bold mb-2">NAME</label>
+                    <label className="block text-sm font-bold mb-2 uppercase">NAME</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Enter your name"
+                      placeholder="ENTER YOUR NAME"
                       required
-                      className="arcade-input"
+                      className="arcade-input uppercase"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-bold mb-2">EMAIL</label>
+                    <label className="block text-sm font-bold mb-2 uppercase">EMAIL</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="your@email.com"
+                      placeholder="YOUR@EMAIL.COM"
                       required
                       className="arcade-input"
                     />
                   </div>
 
                   <div>
-                    <label className="flex items-center font-bold mb-4">
+                    <label className="flex items-center font-bold mb-4 uppercase">
                       <input
                         type="checkbox"
                         name="has_guest"
@@ -197,27 +201,16 @@ export default function Home() {
                         onChange={handleChange}
                         className="mr-3 w-5 h-5"
                       />
-                      <span>Bringing +1 Guest?</span>
+                      <span>BRINGING +1 GUEST?</span>
                     </label>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-bold mb-2">DIETARY RESTRICTIONS</label>
-                    <textarea
-                      name="dietary_restrictions"
-                      value={formData.dietary_restrictions}
-                      onChange={handleChange}
-                      placeholder="(Optional) Vegan, gluten-free, etc."
-                      className="arcade-input h-20 resize-none"
-                    />
-                  </div>
-
-                  {error && <p className="text-red-400 font-bold">{error}</p>}
+                  {error && <p className="text-red-400 font-bold uppercase">{error}</p>}
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`arcade-button w-full text-lg font-bold ${
+                    className={`arcade-button w-full text-lg font-bold uppercase ${
                       loading ? 'opacity-50 cursor-not-allowed' : ''
                     }`}
                   >
@@ -232,17 +225,27 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/admin/rsvps"
-              className="text-sm opacity-60 hover:opacity-100 transition-opacity"
+              className="text-sm opacity-60 hover:opacity-100 transition-opacity uppercase"
             >
-              [admin]
+              [ADMIN]
             </a>
           </div>
         </main>
 
         {/* Footer */}
-        <footer className="border-t-8 border-arcade-yellow mt-16 py-8 bg-black text-center font-mono text-sm">
-          <p>Hosted by Workhorse Collective</p>
-          <p className="opacity-60">OpenClaw Demo • March 12, 2026</p>
+        <footer className="border-t-8 border-arcade-yellow mt-16 py-8 bg-black text-center font-mono text-sm uppercase">
+          <p>
+            HOSTED BY{' '}
+            <a 
+              href="https://www.google.com/maps/search/320+3rd+St+NE,+Washington+DC" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-arcade-yellow hover:underline"
+            >
+              WORKHORSE COLLECTIVE
+            </a>
+          </p>
+          <p className="opacity-60">OPENCLAW DEMO • MARCH 12, 2026</p>
         </footer>
       </div>
     </>

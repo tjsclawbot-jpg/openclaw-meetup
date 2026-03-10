@@ -63,29 +63,29 @@ export default function Admin() {
   return (
     <>
       <Head>
-        <title>RSVP Admin - OpenClaw Meetup</title>
+        <title>RSVP Admin - DC OpenClaw Meetup</title>
       </Head>
 
       <div className="min-h-screen bg-arcade-dark text-arcade-yellow scanlines font-mono">
         <header className="border-b-8 border-arcade-yellow py-6 bg-black">
           <div className="container mx-auto px-4">
-            <h1 className="arcade-title text-4xl mb-2">ADMIN PANEL</h1>
-            <p className="arcade-title text-lg">RSVP Management System</p>
+            <h1 className="arcade-title text-4xl mb-2 uppercase">ADMIN PANEL</h1>
+            <p className="arcade-title text-lg uppercase">RSVP MANAGEMENT SYSTEM</p>
           </div>
         </header>
 
         <main className="container mx-auto px-4 py-12">
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="arcade-card text-center">
-              <p className="text-sm opacity-80 mb-2">TOTAL RSVPs</p>
+            <div className="arcade-card text-center uppercase">
+              <p className="text-sm opacity-80 mb-2">TOTAL RSVPS</p>
               <p className="text-5xl font-bold">{rsvps.length}</p>
             </div>
-            <div className="arcade-card text-center">
+            <div className="arcade-card text-center uppercase">
               <p className="text-sm opacity-80 mb-2">TOTAL GUESTS</p>
               <p className="text-5xl font-bold">{totalGuests}</p>
             </div>
-            <div className="arcade-card text-center">
+            <div className="arcade-card text-center uppercase">
               <p className="text-sm opacity-80 mb-2">+1 GUESTS</p>
               <p className="text-5xl font-bold">
                 {rsvps.filter(r => r.has_guest).length}
@@ -97,53 +97,49 @@ export default function Admin() {
           <div className="mb-8 flex gap-4">
             <button
               onClick={loadRsvps}
-              className="arcade-button"
+              className="arcade-button uppercase"
             >
               REFRESH
             </button>
             <button
               onClick={handleExport}
-              className="arcade-button"
+              className="arcade-button uppercase"
               disabled={rsvps.length === 0}
             >
               EXPORT CSV
             </button>
-            <a href="/" className="arcade-button">
+            <a href="/" className="arcade-button uppercase">
               BACK
             </a>
           </div>
 
           {/* RSVP Table */}
           <div className="arcade-card overflow-x-auto">
-            <h2 className="text-2xl font-bold mb-6 border-b-4 border-arcade-yellow pb-2">
+            <h2 className="text-2xl font-bold mb-6 border-b-4 border-arcade-yellow pb-2 uppercase">
               RSVP LIST
             </h2>
 
             {loading ? (
-              <p className="text-center py-8">Loading RSVPs...</p>
+              <p className="text-center py-8 uppercase">LOADING RSVPS...</p>
             ) : rsvps.length === 0 ? (
-              <p className="text-center py-8">No RSVPs yet. Come back later!</p>
+              <p className="text-center py-8 uppercase">NO RSVPS YET. COME BACK LATER!</p>
             ) : (
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b-2 border-arcade-yellow">
+                  <tr className="border-b-2 border-arcade-yellow uppercase">
                     <th className="text-left py-2 px-2">NAME</th>
                     <th className="text-left py-2 px-2">EMAIL</th>
                     <th className="text-center py-2 px-2">+1?</th>
-                    <th className="text-left py-2 px-2">DIETARY NOTES</th>
                     <th className="text-left py-2 px-2">RSVP'D</th>
                   </tr>
                 </thead>
                 <tbody>
                   {rsvps.map((rsvp, idx) => (
-                    <tr key={idx} className="border-b-2 border-arcade-black hover:bg-black/30">
+                    <tr key={idx} className="border-b-2 border-arcade-black hover:bg-black/30 uppercase">
                       <td className="py-3 px-2 font-bold">{rsvp.name}</td>
                       <td className="py-3 px-2 opacity-80">{rsvp.email}</td>
                       <td className="py-3 px-2 text-center font-bold">
                         {rsvp.has_guest ? '✓ YES' : '-'}
-                      </td>
-                      <td className="py-3 px-2 opacity-80">
-                        {rsvp.dietary_restrictions || 'None'}
                       </td>
                       <td className="py-3 px-2 opacity-60 text-xs">
                         {new Date(rsvp.created_at || '').toLocaleDateString()}
@@ -156,8 +152,8 @@ export default function Admin() {
           </div>
         </main>
 
-        <footer className="border-t-8 border-arcade-yellow mt-16 py-6 bg-black text-center text-sm">
-          <p>OpenClaw Meetup Admin • March 12, 2026</p>
+        <footer className="border-t-8 border-arcade-yellow mt-16 py-6 bg-black text-center text-sm uppercase">
+          <p>OPENCLAW MEETUP ADMIN • MARCH 12, 2026</p>
         </footer>
       </div>
     </>
