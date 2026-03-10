@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 import { supabase, RSVP } from '@/lib/supabase'
+import studioInterior from '@/public/studio-interior.jpg'
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -90,9 +92,9 @@ export default function Home() {
                 textShadow: 'none', 
                 wordSpacing: '9999px',
                 backgroundColor: 'rgba(0, 0, 0, 0.9)',
-                padding: '0.1em 0.3em',
-                lineHeight: '1.3',
-                display: 'inline-block',
+                padding: '0.05em 0.25em',
+                lineHeight: '1.2',
+                display: 'inline',
                 boxDecorationBreak: 'clone',
                 WebkitBoxDecorationBreak: 'clone'
               }}
@@ -132,6 +134,15 @@ export default function Home() {
                         WASHINGTON, DC
                       </a>
                     </div>
+                  </div>
+                  {/* Studio Image */}
+                  <div className="relative w-full h-48 mt-6 rounded border-2 border-arcade-yellow overflow-hidden">
+                    <Image
+                      src={studioInterior}
+                      alt="Workhorse Collective Studio - Open Garage Doors with Pool Table"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 </div>
               </div>
