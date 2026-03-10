@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 import { supabase, RSVP } from '@/lib/supabase'
+import studioInterior from '@/public/studio-interior.jpg'
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -65,16 +67,18 @@ export default function Home() {
 
       <div className="min-h-screen bg-arcade-dark text-arcade-yellow scanlines">
         {/* Arcade Header with Hero Background */}
-        <header 
-          className="border-b-8 border-arcade-yellow py-32 relative overflow-hidden"
-          style={{
-            backgroundImage: "url('/studio-interior.jpg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        >
+        <header className="border-b-8 border-arcade-yellow relative overflow-hidden py-32">
+          {/* Background Image */}
+          <Image
+            src={studioInterior}
+            alt="Workhorse Collective Studio"
+            fill
+            className="object-cover"
+            priority
+          />
+          
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/70"></div>
+          <div className="absolute inset-0 bg-black/65"></div>
           
           {/* Content */}
           <div className="container mx-auto px-4 relative z-10">
