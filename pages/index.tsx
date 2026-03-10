@@ -84,7 +84,19 @@ export default function Home() {
         >
           {/* Content */}
           <div className="container mx-auto px-4 relative z-10 text-center">
-            <h1 className="font-arcade text-5xl sm:text-6xl md:text-7xl lg:text-8xl !text-black leading-tight" style={{textShadow: 'none', wordSpacing: '9999px'}}>DC OPENCLAW MEETUP</h1>
+            <h1 
+              className="font-arcade text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-arcade-yellow"
+              style={{
+                textShadow: 'none', 
+                wordSpacing: '9999px',
+                backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                padding: '0.1em 0.3em',
+                lineHeight: '1.3',
+                display: 'inline-block',
+                boxDecorationBreak: 'clone',
+                WebkitBoxDecorationBreak: 'clone'
+              }}
+            >DC OPENCLAW MEETUP</h1>
           </div>
         </header>
 
