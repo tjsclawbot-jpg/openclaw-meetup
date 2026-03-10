@@ -88,33 +88,18 @@ export default function Home() {
         </header>
 
         <main className="container mx-auto px-4 py-12">
-          {/* Pattern Section */}
+          {/* Event Info Section with Pattern Background */}
           <section 
-            className="mb-16 rounded-lg border-4 border-arcade-yellow overflow-hidden relative py-16"
+            className="mb-16 relative"
             style={{
               backgroundImage: "url('/pattern-isometric.jpg')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundSize: '400px 400px',
+              backgroundRepeat: 'repeat',
+              backgroundAttachment: 'fixed'
             }}
           >
-            {/* Overlay for readability */}
-            <div className="absolute inset-0 bg-black/60"></div>
-            
-            {/* Content */}
-            <div className="container mx-auto px-4 relative z-10">
-              <h2 className="arcade-title text-3xl md:text-5xl text-center mb-4 drop-shadow-lg">
-                THE CREATIVE SPACE
-              </h2>
-              <p className="text-center font-mono text-sm md:text-base uppercase max-w-2xl mx-auto">
-                This is where builders, designers, and thinkers come together. 
-                Workhorse Collective is our home—a space for experimentation, collaboration, and pushing what's possible with AI.
-              </p>
-            </div>
-          </section>
-
-          {/* Event Info Section */}
-          <section className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="container mx-auto px-4 py-12 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* Event Info Card */}
               <div className="arcade-card">
                 <div className="mb-6">
@@ -154,12 +139,16 @@ export default function Home() {
                     THE VIBE
                   </h2>
                   <p className="font-mono text-sm uppercase leading-relaxed mb-4">
+                    This is where builders, designers, and thinkers come together. Workhorse Collective is our home—a space for experimentation, collaboration, and pushing what's possible with AI.
+                  </p>
+                  <p className="font-mono text-sm uppercase leading-relaxed mb-4">
                     An open-ended gathering with no formal presentation. Show off what you've built with OpenClaw and talk with people experimenting with agents and AI.
                   </p>
                   <p className="font-mono text-sm uppercase leading-relaxed">
                     Happy hour. Good people. Good tech talk. We're figuring this out together.
                   </p>
                 </div>
+              </div>
               </div>
             </div>
           </section>
