@@ -133,14 +133,6 @@ export default function Home() {
                       </a>
                     </div>
                   </div>
-                  {/* Studio Image */}
-                  <div className="w-full mt-6 rounded border-2 border-arcade-yellow overflow-hidden">
-                    <img
-                      src="/studio-interior.jpg"
-                      alt="Workhorse Collective Studio - Open Garage Doors with Pool Table"
-                      className="w-full h-64 object-cover"
-                    />
-                  </div>
                 </div>
               </div>
 
