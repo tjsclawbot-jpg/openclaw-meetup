@@ -53,6 +53,15 @@ export default function Admin() {
     a.click()
   }
 
+  const handleCopyEmails = () => {
+    const emails = rsvps.map(rsvp => rsvp.email).join(', ')
+    navigator.clipboard.writeText(emails).then(() => {
+      alert(`COPIED ${rsvps.length} EMAILS TO CLIPBOARD`)
+    }).catch(() => {
+      alert('FAILED TO COPY EMAILS')
+    })
+  }
+
   return (
     <>
       <Head>
@@ -77,7 +86,7 @@ export default function Admin() {
           </div>
 
           {/* Actions */}
-          <div className="mb-8 flex gap-4">
+          <div className="mb-8 flex gap-4 flex-wrap">
             <button
               onClick={loadRsvps}
               className="arcade-button uppercase"
@@ -90,6 +99,13 @@ export default function Admin() {
               disabled={rsvps.length === 0}
             >
               EXPORT CSV
+            </button>
+            <button
+              onClick={handleCopyEmails}
+              className="arcade-button uppercase"
+              disabled={rsvps.length === 0}
+            >
+              COPY ALL EMAILS
             </button>
             <a href="/" className="arcade-button uppercase">
               BACK
