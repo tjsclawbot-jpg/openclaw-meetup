@@ -83,9 +83,8 @@ export default function Home() {
           }}
         >
           {/* Content */}
-          <div className="container mx-auto px-4 relative z-10">
-            <h1 className="arcade-title text-5xl md:text-7xl mb-2 !text-black">DC OPENCLAW MEETUP</h1>
-            <p className="arcade-title text-2xl !text-black">DEMO & NETWORKING</p>
+          <div className="container mx-auto px-4 relative z-10 text-center">
+            <h1 className="font-arcade text-7xl md:text-9xl !text-black" style={{textShadow: 'none'}}>DC OPENCLAW MEETUP</h1>
           </div>
         </header>
 
