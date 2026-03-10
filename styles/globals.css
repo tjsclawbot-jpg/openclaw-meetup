@@ -25,6 +25,39 @@ html, body {
 
 .arcade-card {
   @apply bg-arcade-black border-4 border-arcade-yellow p-6 shadow-arcade;
+  position: relative;
+  overflow: hidden;
+}
+
+.arcade-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.01) 0px,
+      rgba(255, 255, 255, 0.01) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.arcade-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .arcade-input {
