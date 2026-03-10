@@ -141,28 +141,28 @@ export default function Home() {
               <div className="arcade-card">
                 <div>
                   <h2 className="text-2xl font-arcade mb-4 border-b-4 border-arcade-yellow pb-2 uppercase">
-                    WHAT'S HAPPENING
+                    THE VIBE
                   </h2>
                   <ul className="space-y-3 font-mono text-sm uppercase">
                     <li className="flex items-start">
                       <span className="mr-3">▶</span>
-                      <span>OPENCLAW PLATFORM INTRO & DEMO</span>
+                      <span>OPEN-ENDED GATHERING. NO FORMAL PRESENTATION.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-3">▶</span>
-                      <span>SEE AGENTS, AUTOMATION, AI WORKFLOWS</span>
+                      <span>SHOW OFF WHAT YOU'VE BUILT WITH OPENCLAW</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-3">▶</span>
-                      <span>NETWORK WITH BUILDERS & AI ENTHUSIASTS</span>
+                      <span>TALK WITH PEOPLE EXPERIMENTING WITH AGENTS & AI</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-3">▶</span>
-                      <span>LEARN FROM REAL-WORLD IMPLEMENTATIONS</span>
+                      <span>HAPPY HOUR. GOOD PEOPLE. GOOD TECH TALK.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-3">▶</span>
-                      <span>TECH TALK & GOOD VIBES</span>
+                      <span>FIRST ONE. FIGURING IT OUT TOGETHER.</span>
                     </li>
                   </ul>
                 </div>
