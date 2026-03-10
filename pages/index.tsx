@@ -228,15 +228,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Admin Link */}
-          <div className="text-center">
-            <a
-              href="/admin/rsvps"
-              className="text-sm opacity-60 hover:opacity-100 transition-opacity uppercase"
-            >
-              [ADMIN]
-            </a>
-          </div>
+
         </main>
 
         {/* Footer */}
