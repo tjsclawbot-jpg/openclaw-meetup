@@ -143,13 +143,10 @@ export default function Home() {
                     THE VIBE
                   </h2>
                   <p className="font-mono text-sm uppercase leading-relaxed mb-4">
-                    This is where builders, designers, and thinkers come together. Workhorse Collective is our home—a space for experimentation, collaboration, and pushing what's possible with AI.
-                  </p>
-                  <p className="font-mono text-sm uppercase leading-relaxed mb-4">
-                    An open-ended gathering with no formal presentation. Show off what you've built with OpenClaw and talk with people experimenting with agents and AI.
+                    Workhorse Collective is a space for experimentation, collaboration, and pushing what's possible with Frontier Agentic models. This is where builders, designers, and thinkers come together and talk shop.
                   </p>
                   <p className="font-mono text-sm uppercase leading-relaxed">
-                    Happy hour. Good people. Good tech talk. We're figuring this out together.
+                    Join us for the first of an open-ended happy hour gathering with no formal presentation. We invite you to show off what you've built with OpenClaw and talk with people experimenting with AI and Agentic coding.
                   </p>
                 </div>
               </div>
