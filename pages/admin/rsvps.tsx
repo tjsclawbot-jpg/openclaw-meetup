@@ -5,10 +5,49 @@ import { supabase, RSVP } from '@/lib/supabase'
 export default function Admin() {
   const [rsvps, setRsvps] = useState<RSVP[]>([])
   const [loading, setLoading] = useState(true)
+  const [authenticated, setAuthenticated] = useState(false)
+  const [passwordInput, setPasswordInput] = useState('')
+  const [authError, setAuthError] = useState('')
+
+  // Check if user is already authenticated
+  useEffect(() => {
+    const storedAuth = sessionStorage.getItem('admin_authenticated')
+    if (storedAuth === 'true') {
+      setAuthenticated(true)
+    }
+  }, [])
 
   useEffect(() => {
     loadRsvps()
   }, [])
+
+  // Handle admin authentication
+  const handleAuth = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setAuthError('')
+
+    try {
+      const response = await fetch('/api/admin/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: passwordInput }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok && data.success) {
+        sessionStorage.setItem('admin_authenticated', 'true')
+        setAuthenticated(true)
+        setPasswordInput('')
+      } else {
+        setAuthError('Incorrect password')
+        setPasswordInput('')
+      }
+    } catch (err) {
+      setAuthError('Authentication error')
+      console.error('Auth error:', err)
+    }
+  }
 
   const loadRsvps = async () => {
     try {
@@ -76,7 +115,39 @@ export default function Admin() {
           </div>
         </header>
 
-        <main className="container mx-auto px-4 py-12">
+        {!authenticated ? (
+          <main className="container mx-auto px-4 py-20 flex items-center justify-center min-h-96">
+            <div className="arcade-card w-full max-w-md">
+              <h2 className="text-2xl font-arcade mb-6 uppercase border-b-2 border-arcade-yellow pb-3">
+                Enter Password
+              </h2>
+              <form onSubmit={handleAuth} className="space-y-4">
+                <div>
+                  <input
+                    type="password"
+                    value={passwordInput}
+                    onChange={(e) => setPasswordInput(e.target.value)}
+                    placeholder="ADMIN PASSWORD"
+                    className="arcade-input w-full uppercase"
+                    autoFocus
+                  />
+                </div>
+                {authError && (
+                  <p className="text-red-500 font-bold uppercase text-center text-sm">
+                    {authError}
+                  </p>
+                )}
+                <button
+                  type="submit"
+                  className="arcade-button w-full text-lg font-bold uppercase"
+                >
+                  UNLOCK
+                </button>
+              </form>
+            </div>
+          </main>
+        ) : (
+          <main className="container mx-auto px-4 py-12">
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-12">
             <div className="arcade-card text-center uppercase">
@@ -146,6 +217,7 @@ export default function Admin() {
             )}
           </div>
         </main>
+        )}
 
         <footer className="border-t-8 border-arcade-yellow mt-16 py-6 bg-black text-center text-sm uppercase">
           <p>OPENCLAW MEETUP ADMIN • MARCH 12, 2026</p>

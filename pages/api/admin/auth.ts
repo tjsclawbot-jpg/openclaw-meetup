@@ -1,0 +1,19 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' })
+  }
+
+  const { password } = req.body
+
+  // Get admin password from environment variable
+  const correctPassword = process.env.ADMIN_PASSWORD
+
+  // Check if password matches
+  if (!correctPassword || password !== correctPassword) {
+    return res.status(401).json({ success: false, error: 'Incorrect password' })
+  }
+
+  return res.status(200).json({ success: true })
+}
