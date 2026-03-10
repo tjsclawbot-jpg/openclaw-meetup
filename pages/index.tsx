@@ -117,7 +117,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-sm opacity-80">TIME</p>
-                      <p className="text-xl font-bold">5:30 PM - 7:30 PM</p>
+                      <p className="text-xl font-bold">6:00 PM - 8:00 PM</p>
                     </div>
                     <div>
                       <p className="text-sm opacity-80 uppercase">LOCATION</p>
