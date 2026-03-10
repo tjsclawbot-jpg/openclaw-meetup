@@ -90,7 +90,7 @@ export default function Home() {
                 textShadow: 'none', 
                 wordSpacing: '9999px',
                 backgroundColor: 'rgba(0, 0, 0, 0.9)',
-                padding: '0.05em 0.25em',
+                padding: '0.3em 0.25em',
                 lineHeight: '1.2',
                 display: 'inline',
                 boxDecorationBreak: 'clone',
