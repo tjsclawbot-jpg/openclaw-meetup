@@ -129,28 +129,12 @@ export default function Home() {
                   <h2 className="text-2xl font-arcade mb-4 border-b-4 border-arcade-yellow pb-2 uppercase">
                     THE VIBE
                   </h2>
-                  <ul className="space-y-3 font-mono text-sm uppercase">
-                    <li className="flex items-start">
-                      <span className="mr-3">▶</span>
-                      <span>OPEN-ENDED GATHERING. NO FORMAL PRESENTATION.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-3">▶</span>
-                      <span>SHOW OFF WHAT YOU'VE BUILT WITH OPENCLAW</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-3">▶</span>
-                      <span>TALK WITH PEOPLE EXPERIMENTING WITH AGENTS & AI</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-3">▶</span>
-                      <span>HAPPY HOUR. GOOD PEOPLE. GOOD TECH TALK.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-3">▶</span>
-                      <span>FIRST ONE. FIGURING IT OUT TOGETHER.</span>
-                    </li>
-                  </ul>
+                  <p className="font-mono text-sm uppercase leading-relaxed mb-4">
+                    An open-ended gathering with no formal presentation. Show off what you've built with OpenClaw and talk with people experimenting with agents and AI.
+                  </p>
+                  <p className="font-mono text-sm uppercase leading-relaxed">
+                    Happy hour. Good people. Good tech talk. We're figuring this out together.
+                  </p>
                 </div>
               </div>
             </div>
