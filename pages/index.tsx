@@ -84,7 +84,7 @@ export default function Home() {
         >
           {/* Content */}
           <div className="container mx-auto px-4 relative z-10 text-center">
-            <h1 className="font-arcade text-7xl md:text-9xl !text-black" style={{textShadow: 'none'}}>DC OPENCLAW MEETUP</h1>
+            <h1 className="font-arcade text-4xl sm:text-5xl md:text-7xl lg:text-8xl !text-black" style={{textShadow: 'none'}}>DC OPENCLAW MEETUP</h1>
           </div>
         </header>
 
@@ -212,7 +212,7 @@ export default function Home() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t-8 border-arcade-yellow mt-16 py-8 bg-black text-center font-mono text-sm uppercase">
+        <footer className="mt-16 py-8 bg-black text-center font-mono text-sm uppercase">
           <p>
             HOSTED BY{' '}
             <a 
