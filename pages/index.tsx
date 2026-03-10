@@ -28,10 +28,10 @@ export default function Home() {
 
     try {
       if (!supabase) {
-        throw new Error('Supabase not configured')
+        throw new Error('Supabase not configured. Check environment variables.')
       }
       
-      const { error: insertError } = await supabase
+      const { error: insertError, data } = await supabase
         .from('meetup_rsvps')
         .insert([
           {
@@ -41,14 +41,19 @@ export default function Home() {
             dietary_restrictions: formData.dietary_restrictions || null,
           },
         ])
+        .select()
 
-      if (insertError) throw insertError
+      if (insertError) {
+        console.error('Supabase insert error:', insertError)
+        throw new Error(insertError.message || 'Failed to insert RSVP')
+      }
 
       setSubmitted(true)
       setFormData({ name: '', email: '', has_guest: false, dietary_restrictions: '' })
-    } catch (err) {
-      setError('Error submitting RSVP. Please try again.')
-      console.error(err)
+    } catch (err: any) {
+      const errorMsg = err?.message || 'Error submitting RSVP. Please try again.'
+      setError(errorMsg)
+      console.error('Form submission error:', err)
     } finally {
       setLoading(false)
     }
