@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 import { supabase, RSVP } from '@/lib/supabase'
-import studioInterior from '@/public/studio-interior.jpg'
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -74,24 +72,20 @@ export default function Home() {
           backgroundAttachment: 'fixed'
         }}
       >
-        {/* Arcade Header with Hero Background */}
-        <header className="border-b-8 border-arcade-yellow relative overflow-hidden py-32">
-          {/* Background Image */}
-          <Image
-            src={studioInterior}
-            alt="Workhorse Collective Studio"
-            fill
-            className="object-cover"
-            priority
-          />
-          
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/65"></div>
-          
+        {/* Arcade Header with Pattern Background */}
+        <header 
+          className="border-b-8 border-arcade-yellow relative overflow-hidden py-32"
+          style={{
+            backgroundImage: "url('/pattern-isometric.jpg')",
+            backgroundSize: '600px 600px',
+            backgroundRepeat: 'repeat',
+            backgroundAttachment: 'fixed'
+          }}
+        >
           {/* Content */}
           <div className="container mx-auto px-4 relative z-10">
-            <h1 className="arcade-title text-5xl md:text-7xl mb-2">DC OPENCLAW MEETUP</h1>
-            <p className="arcade-title text-2xl">DEMO & NETWORKING</p>
+            <h1 className="arcade-title text-5xl md:text-7xl mb-2 text-black">DC OPENCLAW MEETUP</h1>
+            <p className="arcade-title text-2xl text-black">DEMO & NETWORKING</p>
           </div>
         </header>
 
