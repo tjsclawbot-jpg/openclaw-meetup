@@ -64,38 +64,26 @@ export default function Home() {
       </Head>
 
       <div className="min-h-screen bg-arcade-dark text-arcade-yellow scanlines">
-        {/* Arcade Header */}
-        <header className="border-b-8 border-arcade-yellow py-8 bg-black">
-          <div className="container mx-auto px-4">
-            <h1 className="arcade-title text-4xl md:text-6xl mb-2">DC OPENCLAW MEETUP</h1>
-            <p className="arcade-title text-xl">DEMO & NETWORKING</p>
+        {/* Arcade Header with Hero Background */}
+        <header 
+          className="border-b-8 border-arcade-yellow py-32 relative overflow-hidden"
+          style={{
+            backgroundImage: "url('/studio-interior.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/70"></div>
+          
+          {/* Content */}
+          <div className="container mx-auto px-4 relative z-10">
+            <h1 className="arcade-title text-5xl md:text-7xl mb-2">DC OPENCLAW MEETUP</h1>
+            <p className="arcade-title text-2xl">DEMO & NETWORKING</p>
           </div>
         </header>
 
         <main className="container mx-auto px-4 py-12">
-          {/* Hero Background Images Section */}
-          <section className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              {/* Studio Sign Image */}
-              <div 
-                className="hero-bg halftone rounded-lg border-4 border-arcade-yellow"
-                style={{
-                  backgroundImage: "url('/studio-sign.jpg')",
-                  height: '300px'
-                }}
-              />
-
-              {/* Studio Interior Image */}
-              <div 
-                className="hero-bg halftone rounded-lg border-4 border-arcade-yellow"
-                style={{
-                  backgroundImage: "url('/studio-interior.jpg')",
-                  height: '300px'
-                }}
-              />
-            </div>
-          </section>
-
           {/* Event Info Section */}
           <section className="mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
