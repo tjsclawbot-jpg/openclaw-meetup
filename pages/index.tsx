@@ -142,10 +142,10 @@ export default function Home() {
                   <h2 className="text-2xl font-arcade mb-4 border-b-4 border-arcade-yellow pb-2 uppercase">
                     THE VIBE
                   </h2>
-                  <p className="font-mono text-sm uppercase leading-relaxed mb-4">
+                  <p className="font-mono text-base uppercase leading-relaxed mb-4">
                     Workhorse Collective is a space for experimentation, collaboration, and pushing what's possible with Frontier Agentic models. This is where builders, designers, and thinkers come together and talk shop.
                   </p>
-                  <p className="font-mono text-sm uppercase leading-relaxed">
+                  <p className="font-mono text-base uppercase leading-relaxed">
                     Join us for the first of an open-ended happy hour gathering with no formal presentation. We invite you to show off what you've built with OpenClaw and talk with people experimenting with AI and Agentic coding.
                   </p>
                 </div>
