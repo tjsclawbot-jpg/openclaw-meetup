@@ -220,7 +220,30 @@ export default function Admin() {
         )}
 
         <footer className="border-t-8 border-arcade-yellow mt-16 py-6 bg-black text-center text-sm uppercase">
-          <p>OPENCLAW MEETUP ADMIN • MARCH 12, 2026</p>
+          <p className="mb-4">OPENCLAW MEETUP ADMIN • MARCH 12, 2026</p>
+          
+          {/* Tech Stack */}
+          <div className="border-t border-arcade-yellow pt-3 mt-3">
+            <p className="text-xs opacity-60 mb-2">BUILT WITH</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs opacity-75">
+              <div>
+                <p className="font-bold text-arcade-yellow text-xs">FRONTEND</p>
+                <p>Next.js</p>
+              </div>
+              <div>
+                <p className="font-bold text-arcade-yellow text-xs">BACKEND</p>
+                <p>Supabase</p>
+              </div>
+              <div>
+                <p className="font-bold text-arcade-yellow text-xs">HOSTING</p>
+                <p>Vercel</p>
+              </div>
+              <div>
+                <p className="font-bold text-arcade-yellow text-xs">DESIGN</p>
+                <p>Arcade</p>
+              </div>
+            </div>
+          </div>
         </footer>
       </div>
     </>

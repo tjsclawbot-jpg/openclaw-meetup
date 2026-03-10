@@ -220,7 +220,34 @@ export default function Home() {
               WORKHORSE COLLECTIVE
             </a>
           </p>
-          <p className="opacity-60">OPENCLAW DEMO • MARCH 12, 2026</p>
+          <p className="opacity-60 mb-6">OPENCLAW DEMO • MARCH 12, 2026</p>
+
+          {/* Tech Stack */}
+          <div className="border-t border-arcade-yellow pt-4 mt-6">
+            <p className="text-xs opacity-60 mb-3">BUILT WITH</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs opacity-75">
+              <div>
+                <p className="font-bold text-arcade-yellow">FRONTEND</p>
+                <p>Next.js + React</p>
+                <p>TypeScript</p>
+                <p>Tailwind CSS</p>
+              </div>
+              <div>
+                <p className="font-bold text-arcade-yellow">BACKEND</p>
+                <p>Supabase</p>
+                <p>PostgreSQL</p>
+              </div>
+              <div>
+                <p className="font-bold text-arcade-yellow">HOSTING</p>
+                <p>Vercel</p>
+              </div>
+              <div>
+                <p className="font-bold text-arcade-yellow">DESIGN</p>
+                <p>Press Start 2P</p>
+                <p>Arcade Theme</p>
+              </div>
+            </div>
+          </div>
         </footer>
       </div>
     </>
