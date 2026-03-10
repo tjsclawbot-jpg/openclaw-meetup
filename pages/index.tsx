@@ -59,8 +59,19 @@ export default function Home() {
     <>
       <Head>
         <title>DC OpenClaw Meetup - Workhorse Collective</title>
-        <meta name="description" content="OpenClaw Demo & Networking at Workhorse Collective" />
+        <meta name="description" content="Join us for an open-ended happy hour gathering. Show off what you've built with OpenClaw and talk with people experimenting with AI and Agentic coding." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Open Graph Meta Tags for Social Media Preview */}
+        <meta property="og:title" content="DC OpenClaw Meetup" />
+        <meta property="og:description" content="Join us for the first of an open-ended happy hour gathering with no formal presentation. Thursday, March 12, 6-8 PM at Workhorse Collective, Washington DC." />
+        <meta property="og:image" content="https://openclaw-meetup.vercel.app/og-image.jpg" />
+        <meta property="og:url" content="https://openclaw-meetup.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="DC OpenClaw Meetup" />
+        <meta name="twitter:description" content="Join us Thursday, March 12, 6-8 PM at Workhorse Collective" />
+        <meta name="twitter:image" content="https://openclaw-meetup.vercel.app/og-image.jpg" />
       </Head>
 
       <div 
